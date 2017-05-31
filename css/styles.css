@@ -207,7 +207,7 @@ Common Classes
 
 .search-form input[type="submit"], .yith-ajaxsearchform-container form input[type="submit"] { border: 0; clip: rect(0, 0, 0, 0); height: 1px; margin: -1px; padding: 0; position: absolute; width: 1px; }
 
-.search-form input[type="search"], .yith-ajaxsearchform-container form input[type="search"] { background: #fff url('../images/icon-search.png?1462135657') no-repeat right; background-size: 27px 16px; color: #888; font-size: 14px; padding: 8px 6px; width: 100%; }
+.search-form input[type="search"], .yith-ajaxsearchform-container form input[type="search"] { background: #fff url('../images/icon-search.png?1496237871') no-repeat right; background-size: 27px 16px; color: #888; font-size: 14px; padding: 8px 6px; width: 100%; }
 
 img.centered, .aligncenter { display: block; margin: 0 auto 24px; }
 
@@ -441,7 +441,7 @@ Site Header
 @media only screen and (min-width: 30em) { .site-title { font-size: 55px; } }
 @media only screen and (min-width: 49em) { .site-title { margin-bottom: 20px; } }
 @media only screen and (min-width: 73em) { .site-title { margin-bottom: 0; } }
-.site-title > a { background: url('../images/logo-1.svg?1465478942') no-repeat !important; background-position: center !important; display: block; margin: 0 auto; min-height: 105px; text-indent: -9999px; width: 100%; }
+.site-title > a { background: url('../images/logo-1.svg?1496237863') no-repeat !important; background-position: center !important; display: block; margin: 0 auto; min-height: 105px; text-indent: -9999px; width: 100%; }
 
 .site-description { display: none; }
 
@@ -732,7 +732,7 @@ Site Footer
 /*
 Body Backgrounds
 ---------------------------------------------------------------------------------------------------- */
-body { background: #c0d5df url('../images/background-pattern.svg?1465812715'); background-size: 300px 500px; /*
+body { background: #c0d5df url('../images/background-pattern.svg?1496237878'); background-size: 300px 500px; /*
 &.term-island-holidays, &.term-africa-islands-island-holidays, &.term-caribbean-south-america-islands-island-holidays, &.term-far-east-islands-island-holidays, &.term-indian-ocean-islands-island-holidays, &.term-south-pacific-islands-island-holidays, &.term-mediterranean-islands-island-holidays, &.island-holidays {
 	background: image-url('beach-back.jpg') no-repeat top left fixed;
 	background-size: cover;
@@ -752,7 +752,8 @@ body { background: #c0d5df url('../images/background-pattern.svg?1465812715'); b
 .home-carousel .slick-slide span { display: table-cell; vertical-align: middle; text-align: center; }
 .home-carousel .slick-slide span h3 { background: rgba(255, 255, 255, 0.85); border: 5px solid rgba(0, 0, 0, 0.15); color: black; font-size: 24px; margin: 0 10%; padding: 4% 2%; width: auto; -moz-transition: all 0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; -webkit-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; }
 .home-carousel .slick-slide span h3:hover { background: white; color: #8a1350; -moz-transform: scale(1.1); -ms-transform: scale(1.1); -webkit-transform: scale(1.1); transform: scale(1.1); }
-.home-carousel .slick-slide img { min-height: 450px; max-height: 450px; }
+.home-carousel .slick-slide img { min-height: 205px; max-height: 450px; }
+@media only screen and (min-width: 49em) { .home-carousel .slick-slide img { min-height: 420px; } }
 .home-carousel .slick-prev, .home-carousel .slick-next { height: 26px; top: 52.5%; width: 26px; }
 .home-carousel .slick-prev:before, .home-carousel .slick-next:before { color: black; font-size: 26px; }
 .home-carousel .slick-prev { left: -24px; }
@@ -771,27 +772,27 @@ body { background: #c0d5df url('../images/background-pattern.svg?1465812715'); b
 .partner-logos.slick-slider .slick-next:before { content: "→"; }
 .partner-logos h4 { font-family: "proxima-nova",Arial,"Helvetica Neue",Helvetica,sans-serif; font-size: 19px; font-weight: 600; letter-spacing: 1px; margin-bottom: 0; text-transform: uppercase; }
 
-.backToTop { background: #8a1350 url('../images/up-arrow-white.svg?1465469374') no-repeat center center; background-size: 60%; bottom: 12px; display: none; height: 36px; position: fixed; right: 12px; width: 36px; z-index: 999; }
-.backToTop:hover { background: black url('../images/up-arrow-white.svg?1465469374') no-repeat center center; background-size: 60%; }
+.backToTop { background: #8a1350 url('../images/up-arrow-white.svg?1496237864') no-repeat center center; background-size: 60%; bottom: 12px; display: none; height: 36px; position: fixed; right: 12px; width: 36px; z-index: 999; }
+.backToTop:hover { background: black url('../images/up-arrow-white.svg?1496237864') no-repeat center center; background-size: 60%; }
 
 /*
 WooCommerce
 ---------------------------------------------------------------------------------------------------- */
-div.woocommerce ul.products, div.woocommerce-page ul.products { margin: 0; }
-div.woocommerce ul.products li.product, div.woocommerce-page ul.products li.product { text-align: center; }
-div.woocommerce ul.products li.product.sale, div.woocommerce-page ul.products li.product.sale { padding-bottom: 62px; }
-div.woocommerce ul.products li.product.sale img, div.woocommerce-page ul.products li.product.sale img { margin-bottom: 8px; }
-div.woocommerce ul.products li.product.sale .price, div.woocommerce-page ul.products li.product.sale .price { position: absolute; width: 100%; z-index: 10; }
-div.woocommerce ul.products li.product.sale .price del, div.woocommerce-page ul.products li.product.sale .price del { font-size: 0.8em; opacity: 0.65; }
-div.woocommerce ul.products li.product h3, div.woocommerce-page ul.products li.product h3 { background: rgba(255, 255, 255, 0.85); color: black; font-size: 1.2em; height: auto; left: 5%; padding: 3%; position: absolute; top: 18px; width: 90%; z-index: 5; }
-div.woocommerce ul.products li.product .price, div.woocommerce-page ul.products li.product .price { font-size: 1.3em; font-weight: 600; }
-div.woocommerce ul.products li.product .price i, div.woocommerce-page ul.products li.product .price i { font-style: normal; font-size: 0.8em; }
-div.woocommerce ul.products li.product span.onsale, div.woocommerce-page ul.products li.product span.onsale { background-color: black; font-size: 14px; padding: 4px 9px; text-transform: uppercase; font-weight: 600; z-index: 500; }
-div.woocommerce[class*=columns-] ul.products li.product, div.woocommerce-page[class*=columns-] ul.products li.product { margin: 0 0 30px; }
-@media only screen and (min-width: 49em) { div.woocommerce[class*=columns-] ul.products li.product, div.woocommerce-page[class*=columns-] ul.products li.product { margin: 0 3.8% 2.7em 0; } }
-div.woocommerce[class*=columns-] ul.products li.first, div.woocommerce-page[class*=columns-] ul.products li.first { clear: none; }
-@media only screen and (min-width: 49em) { div.woocommerce[class*=columns-] ul.products li.last, div.woocommerce-page[class*=columns-] ul.products li.last { margin: 0 3.8% 2.7em 0; } }
-div.woocommerce[class*=columns-] ul.products li.third, div.woocommerce-page[class*=columns-] ul.products li.third { clear: right; margin-right: 0; }
+div.woocommerce ul.products, div.woocommerce-page ul.products, .related ul.products { margin: 0; }
+div.woocommerce ul.products li.product, div.woocommerce-page ul.products li.product, .related ul.products li.product { text-align: center; }
+div.woocommerce ul.products li.product.sale, div.woocommerce-page ul.products li.product.sale, .related ul.products li.product.sale { padding-bottom: 62px; }
+div.woocommerce ul.products li.product.sale img, div.woocommerce-page ul.products li.product.sale img, .related ul.products li.product.sale img { margin-bottom: 8px; }
+div.woocommerce ul.products li.product.sale .price, div.woocommerce-page ul.products li.product.sale .price, .related ul.products li.product.sale .price { position: absolute; width: 100%; z-index: 10; }
+div.woocommerce ul.products li.product.sale .price del, div.woocommerce-page ul.products li.product.sale .price del, .related ul.products li.product.sale .price del { font-size: 0.8em; opacity: 0.65; }
+div.woocommerce ul.products li.product h3, div.woocommerce ul.products li.product .woocommerce-loop-product__title, div.woocommerce-page ul.products li.product h3, div.woocommerce-page ul.products li.product .woocommerce-loop-product__title, .related ul.products li.product h3, .related ul.products li.product .woocommerce-loop-product__title { background: rgba(255, 255, 255, 0.85); color: black; font-size: 1.2em; height: auto; left: 5%; padding: 3%; position: absolute; top: 18px; width: 90%; z-index: 5; }
+div.woocommerce ul.products li.product .price, div.woocommerce-page ul.products li.product .price, .related ul.products li.product .price { font-size: 1.3em; font-weight: 600; }
+div.woocommerce ul.products li.product .price i, div.woocommerce-page ul.products li.product .price i, .related ul.products li.product .price i { font-style: normal; font-size: 0.8em; }
+div.woocommerce ul.products li.product span.onsale, div.woocommerce-page ul.products li.product span.onsale, .related ul.products li.product span.onsale { background-color: black; font-size: 14px; padding: 4px 9px; text-transform: uppercase; font-weight: 600; z-index: 500; }
+div.woocommerce[class*=columns-] ul.products li.product, div.woocommerce-page[class*=columns-] ul.products li.product, .related[class*=columns-] ul.products li.product { margin: 0 0 30px; }
+@media only screen and (min-width: 49em) { div.woocommerce[class*=columns-] ul.products li.product, div.woocommerce-page[class*=columns-] ul.products li.product, .related[class*=columns-] ul.products li.product { margin: 0 3.8% 2.7em 0; } }
+div.woocommerce[class*=columns-] ul.products li.first, div.woocommerce-page[class*=columns-] ul.products li.first, .related[class*=columns-] ul.products li.first { clear: none; }
+@media only screen and (min-width: 49em) { div.woocommerce[class*=columns-] ul.products li.last, div.woocommerce-page[class*=columns-] ul.products li.last, .related[class*=columns-] ul.products li.last { margin: 0 3.8% 2.7em 0; } }
+div.woocommerce[class*=columns-] ul.products li.third, div.woocommerce-page[class*=columns-] ul.products li.third, .related[class*=columns-] ul.products li.third { clear: right; margin-right: 0; }
 
 .archive.woocommerce .site-inner { position: relative; }
 .archive.woocommerce .site-inner .page-title { background: black; color: white; left: -3.4%; padding: 1.2% 3.4%; position: absolute; top: 12px; }
@@ -813,7 +814,8 @@ div.woocommerce[class*=columns-] ul.products li.third, div.woocommerce-page[clas
 @media only screen and (min-width: 49em) { .archive.woocommerce ul.products li.last, .archive.woocommerce .woocommerce-info li.last { margin: 0 3.8% 1.3em 0; } }
 .archive.woocommerce ul.products li.third, .archive.woocommerce .woocommerce-info li.third { clear: none; margin-right: 3.8%; }
 .archive.woocommerce ul.products li.second, .archive.woocommerce .woocommerce-info li.second { clear: right; margin-right: 0; }
-.archive.woocommerce ul.products li h3, .archive.woocommerce .woocommerce-info li h3 { background: rgba(255, 255, 255, 0.85); color: black; font-size: 1.2em; height: auto; left: 5%; padding: 3%; position: absolute; top: 14px; width: 90%; z-index: 5; }
+.archive.woocommerce ul.products li h3, .archive.woocommerce ul.products li .woocommerce-loop-category__title, .archive.woocommerce ul.products li .woocommerce-loop-product__title, .archive.woocommerce .woocommerce-info li h3, .archive.woocommerce .woocommerce-info li .woocommerce-loop-category__title, .archive.woocommerce .woocommerce-info li .woocommerce-loop-product__title { background: rgba(255, 255, 255, 0.85); color: black; font-size: 1.2em; height: auto; left: 5%; padding: 3%; position: absolute; top: 14px; width: 90%; z-index: 5; }
+.archive.woocommerce ul.products li h3 .count, .archive.woocommerce ul.products li .woocommerce-loop-category__title .count, .archive.woocommerce ul.products li .woocommerce-loop-product__title .count, .archive.woocommerce .woocommerce-info li h3 .count, .archive.woocommerce .woocommerce-info li .woocommerce-loop-category__title .count, .archive.woocommerce .woocommerce-info li .woocommerce-loop-product__title .count { display: none; }
 .archive.woocommerce ul.products li span.onsale, .archive.woocommerce .woocommerce-info li span.onsale { background-color: black; font-size: 14px; padding: 4px 9px; text-transform: uppercase; font-weight: 600; z-index: 500; }
 .archive.woocommerce ul.products li.product-category h3, .archive.woocommerce .woocommerce-info li.product-category h3 { background: black; bottom: 14px; color: white; font-size: 1.1em; top: auto; }
 .archive.woocommerce ul.products li.product-category h3 mark, .archive.woocommerce .woocommerce-info li.product-category h3 mark { display: none; }

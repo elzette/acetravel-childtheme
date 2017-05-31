@@ -15,9 +15,9 @@ include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 add_filter( 'widget_text', 'do_shortcode' );
 
 //* Enqueue Google fonts, Responsive Menu, and Dashicons
-add_action( 'wp_enqueue_scripts', 'divine_google_fonts' );
-function divine_google_fonts() {
-	wp_enqueue_script( 'divine-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
+add_action( 'wp_enqueue_scripts', 'acetravel_scripts' );
+function acetravel_scripts() {
+	wp_enqueue_script( 'acetravel-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
 	
 	/**
      * Load Slick Slider
@@ -63,8 +63,8 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 unregister_sidebar( 'sidebar-alt' );
 
 //* Hooks widget area above header
-add_action( 'genesis_before', 'divine_widget_above_header'  ); 
-function divine_widget_above_header() {
+add_action( 'genesis_before', 'acetravel_widget_above_header'  ); 
+function acetravel_widget_above_header() {
 
     genesis_widget_area( 'widget-above-header', array(
 		'before' => '<div class="widget-above-header widget-area"><div class="wrap">',
@@ -94,10 +94,10 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before', 'genesis_do_subnav' );
 
 //* Add widget to secondary navigation
-add_filter( 'genesis_nav_items', 'divine_social_icons', 10, 2 );
-add_filter( 'wp_nav_menu_items', 'divine_social_icons', 10, 2 );
+add_filter( 'genesis_nav_items', 'acetravel_social_icons', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'acetravel_social_icons', 10, 2 );
 
-function divine_social_icons($menu, $args) {
+function acetravel_social_icons($menu, $args) {
 	$args = (array)$args;
 	if ( 'secondary' !== $args['theme_location'] )
 		return $menu;
@@ -112,8 +112,8 @@ remove_action( 'genesis_entry_header', 'genesis_post_info', 12);
 add_action( 'genesis_entry_header', 'genesis_post_info', 9 ); 
 
 //* Customize the Post Info Function
-add_filter( 'genesis_post_info', 'divine_post_info_filter' );
-function divine_post_info_filter( $post_info ) {
+add_filter( 'genesis_post_info', 'acetravel_post_info_filter' );
+function acetravel_post_info_filter( $post_info ) {
 
 	$post_info = '[post_categories before="" sep=""]';
     return $post_info;
@@ -138,8 +138,8 @@ add_action( 'genesis_entry_footer', 'genesis_prev_next_post_nav', 15 );
 add_theme_support( 'genesis-after-entry-widget-area' );
 
 //* Hooks before-content widget area to single posts
-add_action( 'genesis_before_content', 'divine_before_content'  ); 
-function divine_before_content() {
+add_action( 'genesis_before_content', 'acetravel_before_content'  ); 
+function acetravel_before_content() {
 
     if ( ! is_home() )
     	return;
@@ -152,8 +152,8 @@ function divine_before_content() {
 }
 
 //* Add split sidebars underneath the primary sidebar
-add_action( 'genesis_after_sidebar_widget_area', 'divine_split_sidebars' );
-function divine_split_sidebars() {
+add_action( 'genesis_after_sidebar_widget_area', 'acetravel_split_sidebars' );
+function acetravel_split_sidebars() {
 	foreach ( array( 'sidebar-split-left', 'sidebar-split-right', 'sidebar-split-bottom' ) as $area ) {
 		echo '<div class="' . $area . '">';
 		dynamic_sidebar( $area );
@@ -162,8 +162,8 @@ function divine_split_sidebars() {
 }
 
 //* Modify the Genesis content limit read more link
-add_filter( 'get_the_content_more_link', 'divine_read_more_link' );
-function divine_read_more_link() {
+add_filter( 'get_the_content_more_link', 'acetravel_read_more_link' );
+function acetravel_read_more_link() {
 	return '... <a class="more-link" href="' . get_permalink() . '">continue reading...</a>';
 }
 
@@ -195,8 +195,8 @@ function partner_logos_cat() {
 }
 
 //* Hooks widget area before footer
-add_action( 'genesis_after', 'divine_widget_before_footer'  ); 
-function divine_widget_before_footer() {
+add_action( 'genesis_after', 'acetravel_widget_before_footer'  ); 
+function acetravel_widget_before_footer() {
 
     genesis_widget_area( 'widget-before-footer', array(
 		'before' => '<div class="widget-before-footer widget-area"><div class="wrap">',
@@ -224,33 +224,15 @@ add_action( 'genesis_after', 'genesis_do_footer', 12 );
 add_action( 'genesis_after', 'genesis_footer_markup_close', 13 ); 
 
 //* Remove comment form allowed tags
-add_filter( 'comment_form_defaults', 'divine_remove_comment_form_allowed_tags' );
-function divine_remove_comment_form_allowed_tags( $defaults ) {
+add_filter( 'comment_form_defaults', 'acetravel_remove_comment_form_allowed_tags' );
+function acetravel_remove_comment_form_allowed_tags( $defaults ) {
 	$defaults['comment_notes_after'] = '';
 	return $defaults; 
 }
 
-//* Modify the size of the Gravatar in the entry comments
-add_filter( 'genesis_comment_list_args', 'divine_comments_gravatar' );
-function divine_comments_gravatar( $args ) {
-
-	$args['avatar_size'] = 96;
-
-	return $args;
-
-}
-
-//* Modify the size of the Gravatar in the author box
-add_filter( 'genesis_author_box_gravatar_size', 'divine_author_box_gravatar' );
-function divine_author_box_gravatar( $size ) {
-
-	return 125;
-
-}
-
 //* Customize the credits 
-add_filter('genesis_footer_creds_text', 'divine_custom_footer_creds_text');
-function divine_custom_footer_creds_text() {
+add_filter('genesis_footer_creds_text', 'acetravel_custom_footer_creds_text');
+function acetravel_custom_footer_creds_text() {
     echo '<div class="creds"><p>';
     echo 'All images and text copyright &copy; ';
     echo date('Y');
@@ -304,53 +286,53 @@ add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 96;' ), 20 )
 //* Register widget areas
 genesis_register_sidebar( array(
 	'id'			=> 'sidebar-split-left',
-	'name'			=> __( 'Sidebar Split Left', 'divine' ),
-	'description'	=> __( 'This is the left side of the split sidebar', 'divine' ),
+	'name'			=> __( 'Sidebar Split Left', 'acetravel' ),
+	'description'	=> __( 'This is the left side of the split sidebar', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'			=> 'sidebar-split-right',
-	'name'			=> __( 'Sidebar Split Right', 'divine' ),
-	'description'	=> __( 'This is the right side of the split sidebar', 'divine' ),
+	'name'			=> __( 'Sidebar Split Right', 'acetravel' ),
+	'description'	=> __( 'This is the right side of the split sidebar', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'			=> 'sidebar-split-bottom',
-	'name'			=> __( 'Sidebar Split Bottom', 'divine' ),
-	'description'	=> __( 'This is the bottom of the split sidebar', 'divine' ),
+	'name'			=> __( 'Sidebar Split Bottom', 'acetravel' ),
+	'description'	=> __( 'This is the bottom of the split sidebar', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'before-content',
-	'name'        => __( 'Home - Before Content', 'divine' ),
-	'description' => __( 'This is the slider section on the home page.', 'divine' ),
+	'name'        => __( 'Home - Before Content', 'acetravel' ),
+	'description' => __( 'This is the slider section on the home page.', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-triple-bottom',
-	'name'        => __( 'Home - Triple Bottom', 'divine' ),
-	'description' => __( 'This is the bottom section of the home page.', 'divine' ),
+	'name'        => __( 'Home - Triple Bottom', 'acetravel' ),
+	'description' => __( 'This is the bottom section of the home page.', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-double-bottom',
-	'name'        => __( 'Home - Double Bottom', 'divine' ),
-	'description' => __( 'This is the bottom section of the home page.', 'divine' ),
+	'name'        => __( 'Home - Double Bottom', 'acetravel' ),
+	'description' => __( 'This is the bottom section of the home page.', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'category-index',
-	'name'        => __( 'Category Index', 'divine' ),
-	'description' => __( 'This is the category index for the category index page template.', 'divine' ),
+	'name'        => __( 'Category Index', 'acetravel' ),
+	'description' => __( 'This is the category index for the category index page template.', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'			=> 'widget-above-header',
-	'name'			=> __( 'Widget Above Header', 'divine' ),
-	'description'	=> __( 'This is the widget area above the header', 'divine' ),
+	'name'			=> __( 'Widget Above Header', 'acetravel' ),
+	'description'	=> __( 'This is the widget area above the header', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'			=> 'widget-before-footer',
-	'name'			=> __( 'Widget Before Footer', 'divine' ),
-	'description'	=> __( 'This is the widget area above the header', 'divine' ),
+	'name'			=> __( 'Widget Before Footer', 'acetravel' ),
+	'description'	=> __( 'This is the widget area above the header', 'acetravel' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'nav-social-menu',
-	'name'        => __( 'Nav Social Menu', 'divine' ),
-	'description' => __( 'This is the nav social menu section.', 'divine' ),
+	'name'        => __( 'Nav Social Menu', 'acetravel' ),
+	'description' => __( 'This is the nav social menu section.', 'acetravel' ),
 ) );
 
 // Login logo
