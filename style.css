@@ -1,0 +1,419 @@
+/*
+	Theme Name: Ace Travel
+	Theme URI: http://www.acetravel.co.za
+	Description: A mobile responsive and HTML5 child theme using Genesis Framework for Ace Travel.
+	Author: Semblance Tech
+	Author URI: http://semblance.co.uk/
+	Version: 1.1
+
+	Template: genesis
+*/
+
+@import url("css/styles.css");
+
+
+
+/*
+Media Queries
+---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-moz-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5) {
+
+	.search-form input[type="search"] {
+		background-image: url(images/icon-search@2x.png);
+	}
+	
+	.content #genesis-responsive-slider .flex-direction-nav li a {
+		background-image: url(images/icon-direction-nav@2x.png);
+	}
+	
+	.content #genesis-responsive-slider .flex-control-nav li a {
+		background-image: url(images/icon-control-nav@2x.png);
+	}
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+	.site-container {
+		max-width: 960px;
+	}
+
+	.site-header .widget-area {
+		width: 100%;
+	}
+	
+	.content {
+		width: 660px;
+	}
+	
+	.sidebar-primary {
+		width: 300px;
+	}
+	
+	.breadcrumb {
+		margin: -30px -40px 30px;
+	}
+	
+	.site-header .genesis-nav-menu a {
+		padding: 38px 14px 40px;
+	}
+	
+	.content,
+	.sidebar-primary,
+	.sidebar-secondary,
+	.site-header .widget-area,
+	.title-area,
+	.wrap,
+	.nav-secondary .wrap,
+	.widget-before-footer .wrap,
+	.widget-above-header .wrap,
+	.footer-widgets .wrap {
+		width: 100%;
+	}
+	
+	.genesis-nav-menu li,
+	.site-header ul.genesis-nav-menu,
+	.site-header .search-form {
+		float: none;
+	}
+
+	.genesis-nav-menu,
+	.site-header .search-form,
+	.site-header hgroup,
+	.site-title {
+		text-align: center;
+	}
+
+	.genesis-nav-menu a,
+	.genesis-nav-menu > .first > a,
+	.genesis-nav-menu > .last > a,
+	.site-header .genesis-nav-menu a {
+		padding: 16px;
+	}
+	
+	.content #genesis-responsive-slider .flex-control-nav,
+	.content #genesis-responsive-slider .flex-direction-nav li a,
+	.content #genesis-responsive-slider .flex-direction-nav li a.prev {
+		display: none;
+	}
+	
+	.widget-before-footer .enews-widget p {
+		font-size: 16px;
+		text-align: left;
+	}
+
+	.widget-before-footer .enews-widget input {
+		width: 30%;
+	}
+	
+	.home-triple-bottom .featured-content .entry {
+		min-height: 350px;
+	}
+	
+	.sidebar-split-left,
+	.sidebar-split-right,
+	.sidebar-split-bottom {
+		float: none;
+		width: 100%;
+	}
+	
+	.sidebar-split-left .widget {
+		padding: 0;
+	}
+
+}
+
+@media only screen and (max-width: 1023px) {
+
+	.site-container {
+		max-width: 768px;
+	}
+	
+	.header-image .title-area, 
+	.header-image .site-title, 
+	.header-image .site-title a {
+	    float: none;
+	    margin: 0 auto;
+	}
+
+	.site-header .search-form {
+		margin: 16px auto ;
+	}
+
+	.genesis-nav-menu li.right {
+		display: none;
+	}
+	
+	.content #genesis-responsive-slider .slide-excerpt {
+		display: none;
+	}
+	
+	.comment-list li.depth-1,
+	.ping-list li.depth-1 {
+		margin: 30px 0;
+	}
+	
+	.genesis-nav-menu .widget-area {
+		width: 100%;
+	}	
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	.site-container {
+		max-width: 600px;
+	}
+
+	.five-sixths,
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.four-sixths,
+	.home-middle-left,
+	.home-middle-right,
+	.home-top .widget,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds,
+	.sidebar-split-left,
+	.sidebar-split-right,
+	.sidebar-split-bottom,
+	.widget-above-header .wrap,
+	.nav-secondary .wrap {
+		margin: 0;
+		width: 100%;
+	}
+	
+	.genesis-nav-menu a,
+	.genesis-nav-menu > .first > a,
+	.genesis-nav-menu > .last > a,
+	.site-header .genesis-nav-menu a {
+		font-size: 12px;
+		padding: 12px;
+	}
+	
+	.home-bottom .featured-content .entry {
+		width: 50%;
+	}
+	
+	.home-middle,
+	.home-top {
+		text-align: center;
+	}
+	
+	.home-cta .button.alignright {
+		float: none;
+		margin: 16px 0 0;
+	}
+	
+	.footer-widgets-1 {
+		margin: 0;
+	}
+	
+	.widget-before-footer {
+		padding: 20px;
+	}
+	
+	.widget-above-header .enews-widget p, 
+	.widget-before-footer .enews-widget p, 
+	.before-content .enews-widget p {
+		float: none;
+		width: 100%;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.widget-above-header .enews-widget input, 
+	.widget-before-footer .enews-widget input, 
+	.before-content .enews-widget input {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.widget-before-footer .enews-widget input[type="submit"],
+	.before-content .enews-widget input[type="submit"],
+	.footer-widgets .featured-content .entry,
+	.before-content .entry,
+	.widget-before-footer #subscribe,
+	.before-content #subscribe,
+	.before-content .featuredpage {
+		float: none;
+		width: 100%;
+	}
+	
+	.divine-home .entry, .archive .entry, .category-index .entry, .sidebar .entry, .footer-widgets .entry {
+		text-align: center;
+	}
+	
+	.genesis-nav-menu.responsive-menu > .menu-item > .sub-menu,
+	.genesis-nav-menu.responsive-menu {
+		display: none;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item,
+	.responsive-menu-icon {
+		display: block;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item {
+		margin: 0;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item:hover {
+		position: static;
+	}
+
+	.genesis-nav-menu.responsive-menu .current-menu-item > a,
+	.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
+	.genesis-nav-menu.responsive-menu a,
+	.genesis-nav-menu.responsive-menu a:hover {
+		background: none;
+		line-height: 1;
+		padding: 16px 20px;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item-has-children {
+		cursor: pointer;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-item-has-children > a {
+		margin-right: 60px;
+	}
+
+	.genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
+		content: "\f347";
+		float: right;
+		font: normal 16px/1 'dashicons';
+		height: 16px;
+		padding: 16px 20px;
+		right: 0;
+		text-align: right;
+		z-index: 9999;
+	}
+
+	.genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before {
+		content: "\f343";
+	}
+
+	.genesis-nav-menu.responsive-menu .sub-menu {
+		border: none;
+		left: auto;
+		opacity: 1;
+		padding-left: 25px;
+		position: relative;
+		-moz-transition:    opacity .4s ease-in-out;
+		-ms-transition:     opacity .4s ease-in-out;
+		-o-transition:      opacity .4s ease-in-out;
+		-webkit-transition: opacity .4s ease-in-out;
+		transition:         opacity .4s ease-in-out;
+		width: 100%;
+		z-index: 99;
+	}
+
+	.genesis-nav-menu.responsive-menu .sub-menu .sub-menu {
+		margin: 0;
+	}
+
+	.genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
+	.genesis-nav-menu.responsive-menu .sub-menu li a,
+	.genesis-nav-menu.responsive-menu .sub-menu li a:hover {
+		background: none;
+		border: none;
+		padding: 12px 20px;
+		position: relative;
+		width: 100%;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+
+	.entry-title {
+		font-size: 24px;
+	}
+
+	.content .entry-header .entry-meta .entry-comments-link {
+		display: none;
+	}
+	
+	.widget-title:after, .widget-title:before {
+		border: none;
+		margin: 0;
+		width: 0;
+	}
+	
+	.home-bottom .featured-content .entry,
+	.category-index .featured-content .entry,
+	.footer-widgets .featured-content .entry {
+		width: 100%;
+	}
+	
+	.featured-content .entry {
+		text-align: center;
+	}
+	
+	.alignleft,
+	a.alignleft img,
+	a.alignnone img {
+		display: block;
+		float: none;
+		text-align: center;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+	
+	.category-index ul li {	
+		font-size: 13px;
+		text-align: center;
+		width: 100%;
+	}
+	
+	.archive .content .entry {
+		float: none;
+		width: 100%;
+	}
+	
+	.more-from-category a, 
+	a.more-link {
+		width: 100%;
+	}
+	
+	.sidebar .featured-content .entry-title {
+		text-align: center;
+	}
+	
+	.content .woocommerce ul.product_list_widget li,
+	.footer-widgets .woocommerce ul.product_list_widget li {
+		text-align: center;
+		width: 100% !important;
+	}
+
+	.content .woocommerce ul.cart_list li img,
+	.content .woocommerce ul.product_list_widget li img,
+	.content .woocommerce-page ul.cart_list li img,
+	.content .woocommerce-page ul.product_list_widget li img {
+		margin: 0 auto;
+	}
+
+	.woocommerce ul.products li.product,
+	.woocommerce-page ul.products li.product,
+	.home-bottom .featured-content .entry {
+		width: 100% !important;
+	}
+
+
+}
+
+
+/* This theme contains intellectual property owned by Restored 316 LLC, including trademarks, copyrights, proprietary information, and other intellectual property. You may not modify, publish, transmit, participate in the transfer or sale of, create derivative works from, distribute, reproduce or perform, or in any way exploit in any format whatsoever any of this theme or intellectual property, in whole or in part, without our prior written consent.
