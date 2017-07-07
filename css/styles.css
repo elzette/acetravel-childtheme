@@ -753,7 +753,7 @@ body { background: #c0d5df url('../images/background-pattern.svg?1496237878'); b
 .home-carousel .slick-slide span h3 { background: rgba(255, 255, 255, 0.85); border: 5px solid rgba(0, 0, 0, 0.15); color: black; font-size: 24px; margin: 0 10%; padding: 4% 2%; width: auto; -moz-transition: all 0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; -webkit-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; }
 .home-carousel .slick-slide span h3:hover { background: white; color: #8a1350; -moz-transform: scale(1.1); -ms-transform: scale(1.1); -webkit-transform: scale(1.1); transform: scale(1.1); }
 .home-carousel .slick-slide img { min-height: 205px; max-height: 450px; }
-@media only screen and (min-width: 49em) { .home-carousel .slick-slide img { min-height: 420px; } }
+@media only screen and (min-width: 49em) { .home-carousel .slick-slide img { min-height: 438px; } }
 .home-carousel .slick-prev, .home-carousel .slick-next { height: 26px; top: 52.5%; width: 26px; }
 .home-carousel .slick-prev:before, .home-carousel .slick-next:before { color: black; font-size: 26px; }
 .home-carousel .slick-prev { left: -24px; }
@@ -785,7 +785,7 @@ div.woocommerce ul.products li.product.sale img, div.woocommerce-page ul.product
 div.woocommerce ul.products li.product.sale .price, div.woocommerce-page ul.products li.product.sale .price, .related ul.products li.product.sale .price { position: absolute; width: 100%; z-index: 10; }
 div.woocommerce ul.products li.product.sale .price del, div.woocommerce-page ul.products li.product.sale .price del, .related ul.products li.product.sale .price del { font-size: 0.8em; opacity: 0.65; }
 div.woocommerce ul.products li.product h3, div.woocommerce ul.products li.product .woocommerce-loop-product__title, div.woocommerce-page ul.products li.product h3, div.woocommerce-page ul.products li.product .woocommerce-loop-product__title, .related ul.products li.product h3, .related ul.products li.product .woocommerce-loop-product__title { background: rgba(255, 255, 255, 0.85); color: black; font-size: 1.2em; height: auto; left: 5%; padding: 3%; position: absolute; top: 18px; width: 90%; z-index: 5; }
-div.woocommerce ul.products li.product .price, div.woocommerce-page ul.products li.product .price, .related ul.products li.product .price { font-size: 1.3em; font-weight: 600; }
+div.woocommerce ul.products li.product .price, div.woocommerce-page ul.products li.product .price, .related ul.products li.product .price { font-size: 1.3em; font-weight: 600; min-height: 44px; }
 div.woocommerce ul.products li.product .price i, div.woocommerce-page ul.products li.product .price i, .related ul.products li.product .price i { font-style: normal; font-size: 0.8em; }
 div.woocommerce ul.products li.product span.onsale, div.woocommerce-page ul.products li.product span.onsale, .related ul.products li.product span.onsale { background-color: black; font-size: 14px; padding: 4px 9px; text-transform: uppercase; font-weight: 600; z-index: 500; }
 div.woocommerce[class*=columns-] ul.products li.product, div.woocommerce-page[class*=columns-] ul.products li.product, .related[class*=columns-] ul.products li.product { margin: 0 0 30px; }
