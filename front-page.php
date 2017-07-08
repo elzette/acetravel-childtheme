@@ -4,7 +4,6 @@
  * Template Name: Home
  *
  * @package      acetravel-childtheme
- * @link         http://www.carriedils.com/utility-pro
  * @author       Semblance
  */
 
