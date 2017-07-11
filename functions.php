@@ -74,12 +74,10 @@ add_action( 'genesis_before', 'acetravel_widget_above_header' );
  * Hooks widget area above header
  */
 function acetravel_widget_above_header() {
-
 	genesis_widget_area( 'widget-above-header', array(
 		'before' => '<div class="widget-above-header widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
-
 }
 
 /**
@@ -119,12 +117,12 @@ add_filter( 'wp_nav_menu_items', 'acetravel_social_icons', 10, 2 );
  */
 function acetravel_social_icons( $menu, $args ) {
 	$args = (array) $args;
-	if ( 'secondary' !== $args['theme_location'] )
-		return $menu;
-	ob_start();
-	genesis_widget_area( 'nav-social-menu' );
-	$social = ob_get_clean();
-	return $menu . $social;
+	if ( 'secondary' !== $args['theme_location'] ) {
+			ob_start();
+			genesis_widget_area( 'nav-social-menu' );
+			$social = ob_get_clean();
+			return $menu . $social;
+	}
 }
 
 // * Position post info above post title
@@ -168,12 +166,12 @@ add_action( 'genesis_before_content', 'acetravel_before_content' );
  * Hooks before-content widget area to single posts
  */
 function acetravel_before_content() {
-	if ( ! is_home() )
-		return;
+	if ( ! is_home() ) {
 		genesis_widget_area( 'before-content', array(
 			'before' => '<div class="before-content widget-area"><div class="wrap">',
 			'after'  => '</div></div>',
 		) );
+	}
 }
 
 add_action( 'genesis_after_sidebar_widget_area', 'acetravel_split_sidebars' );
@@ -182,9 +180,9 @@ add_action( 'genesis_after_sidebar_widget_area', 'acetravel_split_sidebars' );
  */
 function acetravel_split_sidebars() {
 	foreach ( array( 'sidebar-split-left', 'sidebar-split-right', 'sidebar-split-bottom' ) as $area ) {
-		echo '<div class="' . $area . '">';
+		echo '<div class="' . esc_attr( $area ) . '">';
 		dynamic_sidebar( $area );
-		echo '</div><!-- end #' . $area . '-->';
+		echo '</div><!-- end #' . esc_html( $area ) . '-->';
 	}
 }
 
@@ -207,7 +205,7 @@ function partner_logos() {
 		if ( have_rows( 'partner_logos', 'option' ) ) : while ( have_rows( 'partner_logos', 'option' ) ) : the_row();
 				// * vars
 				$image = get_sub_field( 'logo_image', 'option' );
-				echo '<div><figure><img data-lazy="' . $image['url'] . '" alt="' . $image['alt'] . '" /></figure></div>';
+				echo '<div><figure><img data-lazy="' . esc_url( $image['url'] ) . '" alt="' . esc_html( $image['alt'] ) . '" /></figure></div>';
 		endwhile;
 		endif;
 		echo '</div><!-- end .partner-logos -->';
@@ -261,7 +259,8 @@ add_filter( 'genesis_footer_creds_text', 'acetravel_custom_footer_creds_text' );
 function acetravel_custom_footer_creds_text() {
 	echo '<div class="creds"><p>';
 	echo 'All images and text copyright &copy; ';
-	echo date( 'Y' );
+	$aceyear = date( 'Y' );
+	echo esc_html( $aceyear );
 	echo ' &middot; Ace Travel and their respective owners';
 	echo '</p></div>';
 }

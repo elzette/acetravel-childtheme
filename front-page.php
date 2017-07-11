@@ -24,20 +24,20 @@ function acetravel_home_genesis_meta() {
  * Initialise Ace Travel home page sections
  */
 function acetravel_home_sections() {
-  $rows = get_field('home_page_slides');
-  if ( $rows ) {
+	$rows = get_field( 'home_page_slides' );
+	if ( $rows ) {
 		echo '<div class="home-carousel">';
 
 		// * Setup of rest of timeline to make each entry a row in the table structure
 		foreach ( $rows as $row ) {
-      echo '<div class="slide-container">';
+			echo '<div class="slide-container">';
 
-      // * Using the ACF Image ID with new image size set in function.php called 'blog-vertical-featured'
+			// * Using the ACF Image ID with new image size set in function.php called 'blog-vertical-featured'
 			$catimage = wp_get_attachment_image_src( $row['slide_image'], 'blog-vertical-featured' );
 			if ( $catimage ) {
-        echo '<img data-lazy="' . $catimage[0] . '">';
+				echo '<img data-lazy="' . esc_url( $catimage[0] ) . '">';
 			}
-      echo '<a href="' . get_term_link( $row['slide_link'] ) . '"><span><h3>' . $row['slide_title'] . '</h3></span></a></div>';
+				echo '<a href="' . esc_url( $row['slide_link'] ) . '"><span><h3>' . esc_html( $row['slide_title'] ) . '</h3></span></a></div>';
 		}
 		echo '</div>';
 	}
@@ -53,11 +53,11 @@ function acetravel_home_sections() {
 
 		// * Setup of rest of timeline to make each entry a row in the table structure
 		foreach ( $adverts as $advert ) {
-      echo '<div class="home-advert"><a href="' . $advert['advert_link'] . '">';
+			echo '<div class="home-advert"><a href="' . esc_url( $advert['advert_link'] ) . '">';
 			// * Using the ACF Image ID with new image size set in function.php called 'blog-vertical-featured'
 			$advertimage = wp_get_attachment_image_src( $advert['advert_image'], 'adverts' );
 			if ( $advertimage ) {
-        echo '<img src="' . $advertimage[0] . '">';
+				echo '<img src="' . esc_url( $advertimage[0] ) . '">';
 			}
 			echo '</a></div>';
 		}

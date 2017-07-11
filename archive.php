@@ -3,7 +3,6 @@
  * Ace Travel.
  *
  * @package      acetravel-childtheme
- * @link         http://www.carriedils.com/utility-pro
  * @author       Semblance
  */
 
@@ -25,7 +24,7 @@ add_action( 'genesis_entry_header', 'acetravel_archive_grid', 9 );
  */
 function acetravel_archive_grid() {
   if ( $image = genesis_get_image( 'format=url&size=blog-square-featured' ) ) {
-    printf( '<div class="divine-featured-image"><a href="%s" rel="bookmark"><img src="%s" alt="%s" /></a></div>', get_permalink(), $image, the_title_attribute( 'echo=0' ) );
+    printf( '<div class="divine-featured-image"><a href="%s" rel="bookmark"><img src="%s" alt="%s" /></a></div>', get_permalink(), esc_url( $image ), the_title_attribute( 'echo=0' ) );
   }
 }
 
