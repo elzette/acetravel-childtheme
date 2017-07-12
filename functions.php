@@ -160,82 +160,77 @@ add_action( 'genesis_entry_footer', 'genesis_prev_next_post_nav', 15 );
 // * Add support for after entry widget
 add_theme_support( 'genesis-after-entry-widget-area' );
 
-// * Hooks before-content widget area to single posts
-add_action( 'genesis_before_content', 'acetravel_before_content'  );
+add_action( 'genesis_before_content', 'acetravel_before_content' );
+/**
+ * Hooks before-content widget area to single posts.
+ */
 function acetravel_before_content() {
-    if ( ! is_home() )
-    	return;
-    genesis_widget_area( 'before-content', array(
-		'before' => '<div class="before-content widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-    ) );
+	if ( ! is_home() )
+		return;
+		genesis_widget_area( 'before-content', array(
+			'before' => '<div class="before-content widget-area"><div class="wrap">',
+			'after'  => '</div></div>',
+		) );
 }
 
-// * Add split sidebars underneath the primary sidebar
 add_action( 'genesis_after_sidebar_widget_area', 'acetravel_split_sidebars' );
+/**
+ * Add split sidebars underneath the primary sidebar.
+ */
 function acetravel_split_sidebars() {
 	foreach ( array( 'sidebar-split-left', 'sidebar-split-right', 'sidebar-split-bottom' ) as $area ) {
-		echo '<div class="' . $area . '">';
+		echo '<div class="' . esc_attr( $area ) . '">';
 		dynamic_sidebar( $area );
-		echo '</div><!-- end #' . $area . '-->';
+		echo '</div><!-- end #' . esc_html( $area ) . '-->';
 	}
 }
 
-// * Modify the Genesis content limit read more link
 add_filter( 'get_the_content_more_link', 'acetravel_read_more_link' );
+/**
+ * Modify the Genesis content limit read more link.
+ */
 function acetravel_read_more_link() {
 	return '... <a class="more-link" href="' . get_permalink() . '">continue reading...</a>';
 }
 
-// * Add partner logos before footer
-add_action( 'genesis_before_footer', 'partner_logos'  );
+add_action( 'genesis_before_footer', 'partner_logos' );
+/**
+ * Add partner logos before footer.
+ */
 function partner_logos() {
- if ( is_front_page() || is_page() ) {
-	echo '<div class="partner-logos">';
-	echo '<h4>Our Partners</h4>';
-	if( have_rows('partner_logos', 'option') ): while( have_rows('partner_logos', 'option') ): the_row();
- 		// vars
-		$image = get_sub_field('logo_image', 'option');
-	echo '<div><figure><img data-lazy="' . $image['url'] . '" alt="' . $image['alt'] . '" /></figure></div>';
- 	endwhile; endif;
- 	echo '</div><!-- end .partner-logos -->';
- }
+	if ( is_front_page() || is_page() ) {
+		echo '<div class="partner-logos">';
+		echo '<h4>Our Partners</h4>';
+		if ( have_rows( 'partner_logos', 'option' ) ) : while ( have_rows( 'partner_logos', 'option' ) ) : the_row();
+				$image = get_sub_field( 'logo_image', 'option' );
+				echo '<div><figure><img data-lazy="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" /></figure></div>';
+			endwhile;
+	endif;
+		echo '</div><!-- end .partner-logos -->';
+	}
 }
 
-add_action( 'woocommerce_after_shop_loop', 'partner_logos_cat');
-function partner_logos_cat() {
-	echo '<div class="partner-logos">';
-	echo '<h4>Our Partners</h4>';
-	if( have_rows('partner_logos', 'option') ): while( have_rows('partner_logos', 'option') ): the_row();
- 		// vars
-		$image = get_sub_field('logo_image', 'option');
-	echo '<div><figure><img data-lazy="' . $image['url'] . '" alt="' . $image['alt'] . '" /></figure></div>';
- 	endwhile; endif;
- 	echo '</div><!-- end .partner-logos -->';
-}
-
-//* Hooks widget area before footer
-add_action( 'genesis_after', 'acetravel_widget_before_footer'  );
+add_action( 'genesis_after', 'acetravel_widget_before_footer' );
+/**
+ * Hooks widget area before footer.
+ */
 function acetravel_widget_before_footer() {
-
-    genesis_widget_area( 'widget-before-footer', array(
+	genesis_widget_area( 'widget-before-footer', array(
 		'before' => '<div class="widget-before-footer widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-    ) );
-
+	) );
 }
 
-// remove emoji from header
+// * remove emoji from header
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-//* Reposition the footer widgets
+// * Reposition the footer widgets
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_after', 'genesis_footer_widget_areas' );
 
-//* Reposition the footer
+// * Reposition the footer
 remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
@@ -243,67 +238,67 @@ add_action( 'genesis_after', 'genesis_footer_markup_open', 11 );
 add_action( 'genesis_after', 'genesis_do_footer', 12 );
 add_action( 'genesis_after', 'genesis_footer_markup_close', 13 );
 
-//* Remove comment form allowed tags
 add_filter( 'comment_form_defaults', 'acetravel_remove_comment_form_allowed_tags' );
+/**
+ * Remove comment form allowed tags.
+ *
+ * @param type $defaults Return comment form without HTML tags.
+ */
 function acetravel_remove_comment_form_allowed_tags( $defaults ) {
 	$defaults['comment_notes_after'] = '';
 	return $defaults;
 }
 
-//* Customize the credits
-add_filter('genesis_footer_creds_text', 'acetravel_custom_footer_creds_text');
+add_filter( 'genesis_footer_creds_text', 'acetravel_custom_footer_creds_text' );
+/**
+ * Customize the creditsRemove comment form allowed tags.
+ */
 function acetravel_custom_footer_creds_text() {
-    echo '<div class="creds"><p>';
-    echo 'All images and text copyright &copy; ';
-    echo date('Y');
-    echo ' &middot; Ace Travel and their respective owners';
-    echo '</p></div>';
-
+	echo '<div class="creds"><p>';
+	echo 'All images and text copyright &copy; ';
+	echo date( 'Y' );
+	echo ' &middot; Ace Travel and their respective owners';
+	echo '</p></div>';
 }
 
-// Add support for SVG inside WordPress Media Uploader
-// source: http://wpsnipp.com/index.php/functions-php/add-support-svg-inside-wordpress-media-uploader/
-function wps_mime_types( $mimes ){
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
+/**
+ * Add support for SVG inside WordPress Media Uploader.
+ *
+ * @source http://wpsnipp.com/index.php/functions-php/add-support-svg-inside-wordpress-media-uploader/
+ *
+ * @param type $mimes Return SVG.
+ */
+function wps_mime_types( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
 }
 add_filter( 'upload_mimes', 'wps_mime_types' );
 
-//* Add Theme Support for WooCommerce
+// * Add Theme Support for WooCommerce
 add_theme_support( 'genesis-connect-woocommerce' );
 
-
-/*
- * Move Related products underneath content
-
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-
-add_action( 'genesis_entry_footer', 'move_related_products', 40 );
-function move_related_products() {
-	 echo do_shortcode('[related_products per_page="4" orderby="date" columns="4"]');
-}*/
-
-//* Remove Add to Cart on Archives
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
+/**
+ * Remove Add to Cart on Archives.
+ */
 function remove_add_to_cart_buttons() {
-
-    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
-
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 }
 
-//* Change number or products per row to 3
-add_filter('loop_shop_columns', 'loop_columns');
-if (!function_exists('loop_columns')) {
+add_filter( 'loop_shop_columns', 'loop_columns' );
+if ( ! function_exists( 'loop_columns' ) ) {
+	/**
+	 * Change number or products per row to 3.
+	 */
 	function loop_columns() {
 		return 3; // 3 products per row
 	}
 }
 
-//* Display all products per page
+// * Display all products per page
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 96;' ), 20 );
 
-
-//* Register widget areas
+// * Register widget areas
 genesis_register_sidebar( array(
 	'id'			=> 'sidebar-split-left',
 	'name'			=> __( 'Sidebar Split Left', 'acetravel' ),
@@ -355,6 +350,11 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the nav social menu section.', 'acetravel' ),
 ) );
 
-// Login logo
-function custom_loginlogo() {   echo '<style type="text/css">     #login h1 a {background-image: url('.get_bloginfo('stylesheet_directory').'/images/login_logo.png) !important; }   </style>'; }
-add_action('login_head', 'custom_loginlogo');
+
+add_action( 'login_head', 'custom_loginlogo' );
+/**
+ * Login logo.
+ */
+function custom_loginlogo() {
+	echo '<style type="text/css">#login h1 a {background-image: url(' . get_bloginfo( 'stylesheet_directory' ) . '/images/login_logo.png) !important; }   </style>';
+}
