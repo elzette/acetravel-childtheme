@@ -96,7 +96,7 @@ Defaults
 --------------------------------------------- */
 html { font-size: 62.5%; /* 10px browser default */ }
 
-body { color: #333; font-family: "proxima-nova",Arial,"Helvetica Neue",Helvetica,sans-serif; font-size: 17px; font-weight: 400; line-height: 1.5; }
+body { color: #333; font-family: "proxima-nova",Arial,"Helvetica Neue",Helvetica,sans-serif; font-size: 17px; font-weight: 400; line-height: 1.35; }
 
 a, button, input[type="button"], input[type="reset"], input[type="submit"], textarea:focus, .enquire, .button { -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; }
 
@@ -109,7 +109,7 @@ a:hover { color: #8a1350; text-decoration: none; }
 a:focus { outline: none; }
 a img { margin-bottom: -4px; }
 
-p { margin: 0 0 24px; padding: 0; }
+p { margin: 0 0 18px; padding: 0; }
 
 strong { font-weight: 600; }
 
@@ -133,20 +133,20 @@ cite { font-style: normal; }
 
 /* Headings
 --------------------------------------------- */
-h1, h2, h3, h4, h5, h6 { color: #8a1350; font-family: "lato",Arial,"Helvetica Neue",Helvetica,sans-serif; letter-spacing: 0.5px; line-height: 1.25; margin: 0; margin-bottom: 24px; padding: 0; }
+h1, h2, h3, h4, h5, h6 { color: #8a1350; font-family: "lato",Arial,"Helvetica Neue",Helvetica,sans-serif; letter-spacing: 0.5px; line-height: 1.25; margin: 0; margin-bottom: 18px; padding: 0; }
 
-h1 { font-size: 34px; font-weight: 300; color: black; }
-@media only screen and (min-width: 49em) { h1 { font-size: 42px; } }
+h1 { font-size: 32px; font-weight: 300; color: black; }
+@media only screen and (min-width: 49em) { h1 { font-size: 38px; } }
 
-h2 { font-size: 36px; font-weight: 300; }
+h2 { font-size: 32px; font-weight: 300; }
 
 h3 { font-size: 26px; }
 
-h4 { font-size: 24px; }
+h4 { font-size: 24px; margin-bottom: 10px; }
 
-h5 { font-size: 20px; }
+h5 { font-size: 20px; margin-bottom: 10px; }
 
-h6 { font-size: 16px; }
+h6 { font-size: 16px; margin-bottom: 10px; }
 
 /* Objects
 --------------------------------------------- */
@@ -521,6 +521,8 @@ Content Area
 ---------------------------------------------------------------------------------------------------- */
 /* Home Page
 --------------------------------------------- */
+@media only screen and (min-width: 49em) { .home .woocommerce .products .product { display: block; min-height: 420px; } }
+
 .home-slider { margin-bottom: 20px; }
 .home-slider a.more-link { background: #fff; text-align: center; padding: 5px; }
 
@@ -602,8 +604,8 @@ Content Area
 
 .entry-content ol, .entry-content p, .entry-content ul, .quote-caption, .content .entry ol, .content .entry ul { margin-bottom: 26px; }
 
-.entry-content ul li, .term-description ul li, .content .entry ul li { list-style-type: disc; margin-left: 28px; margin-bottom: 4px; padding-left: 6px; }
-.entry-content ol li, .term-description ol li, .content .entry ol li { list-style-type: decimal; margin-left: 24px; margin-bottom: 10px; padding-left: 10px; }
+.entry-content ul li, .term-description ul li, .content .entry ul li { list-style-type: disc; margin-left: 28px; margin-bottom: 2px; padding-left: 6px; }
+.entry-content ol li, .term-description ol li, .content .entry ol li { list-style-type: decimal; margin-left: 24px; margin-bottom: 6px; padding-left: 10px; }
 
 .entry-content ol ol, .entry-content ul ul, .entry-content .wp-caption p, .content .entry ol ol, .content .entry ul ul { margin-bottom: 0; }
 
@@ -785,7 +787,7 @@ div.woocommerce ul.products li.product.sale img, div.woocommerce-page ul.product
 div.woocommerce ul.products li.product.sale .price, div.woocommerce-page ul.products li.product.sale .price, .related ul.products li.product.sale .price { position: absolute; width: 100%; z-index: 10; }
 div.woocommerce ul.products li.product.sale .price del, div.woocommerce-page ul.products li.product.sale .price del, .related ul.products li.product.sale .price del { font-size: 0.8em; opacity: 0.65; }
 div.woocommerce ul.products li.product h3, div.woocommerce ul.products li.product .woocommerce-loop-product__title, div.woocommerce-page ul.products li.product h3, div.woocommerce-page ul.products li.product .woocommerce-loop-product__title, .related ul.products li.product h3, .related ul.products li.product .woocommerce-loop-product__title { background: rgba(255, 255, 255, 0.85); color: black; font-size: 1.2em; height: auto; left: 5%; padding: 3%; position: absolute; top: 18px; width: 90%; z-index: 5; }
-div.woocommerce ul.products li.product .price, div.woocommerce-page ul.products li.product .price, .related ul.products li.product .price { font-size: 1.3em; font-weight: 600; min-height: 44px; }
+div.woocommerce ul.products li.product .price, div.woocommerce-page ul.products li.product .price, .related ul.products li.product .price { font-size: 1.3em; font-weight: 600; }
 div.woocommerce ul.products li.product .price i, div.woocommerce-page ul.products li.product .price i, .related ul.products li.product .price i { font-style: normal; font-size: 0.8em; }
 div.woocommerce ul.products li.product span.onsale, div.woocommerce-page ul.products li.product span.onsale, .related ul.products li.product span.onsale { background-color: black; font-size: 14px; padding: 4px 9px; text-transform: uppercase; font-weight: 600; z-index: 500; }
 div.woocommerce[class*=columns-] ul.products li.product, div.woocommerce-page[class*=columns-] ul.products li.product, .related[class*=columns-] ul.products li.product { margin: 0 0 30px; }

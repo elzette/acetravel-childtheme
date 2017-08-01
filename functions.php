@@ -1,7 +1,6 @@
 <?php
 /**
  * Ace Travel.
- * Template Name: Home
  *
  * @package      acetravel-childtheme
  * @author       Semblance
